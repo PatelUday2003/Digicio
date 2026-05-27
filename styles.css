@@ -1288,12 +1288,12 @@ h1, h2, h3, h4, h5, h6 {
 .about-hero {
     background-color: var(--color-primary);
     color: var(--color-white);
-    padding: var(--section-y) 0;
+    padding: calc(var(--section-y) * 1.2) 0;
     text-align: center;
 }
 
 .about-hero-content {
-    max-width: 700px;
+    max-width: 720px;
     margin: 0 auto;
 }
 
@@ -1301,7 +1301,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Nunito', sans-serif;
     font-size: 56px;
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     line-height: 1.1;
 }
 
@@ -1309,7 +1309,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 22px;
     color: rgba(255, 255, 255, 0.95);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     font-weight: 600;
     line-height: 1.4;
 }
@@ -1317,14 +1317,15 @@ h1, h2, h3, h4, h5, h6 {
 .about-hero .hero-description {
     font-size: 18px;
     color: rgba(255, 255, 255, 0.85);
-    margin-bottom: 40px;
-    line-height: 1.7;
+    margin-bottom: 48px;
+    line-height: 1.75;
 }
 
 .about-hero .hero-cta {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     justify-content: center;
+    align-items: center;
 }
 
 .our-story {

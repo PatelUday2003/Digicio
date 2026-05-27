@@ -89,4 +89,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const isOpen = this.classList.contains('active');
+            
+            faqQuestions.forEach(q => {
+                q.classList.remove('active');
+                const a = q.nextElementSibling;
+                a.classList.remove('open');
+            });
+
+            if (!isOpen) {
+                this.classList.add('active');
+                answer.classList.add('open');
+            }
+        });
+    });
 });

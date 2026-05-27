@@ -1854,12 +1854,17 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--color-bg-soft);
 }
 
+.team-bio .container {
+    max-width: 800px;
+    text-align: center;
+}
+
 .team-bio h2 {
     font-family: 'Nunito', sans-serif;
     font-size: 36px;
     font-weight: 800;
     color: var(--color-dark);
-    margin-bottom: 32px;
+    margin-bottom: 40px;
 }
 
 .team-bio p {
@@ -1867,8 +1872,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 17px;
     line-height: 1.8;
     color: var(--color-dark-gray);
-    margin-bottom: 20px;
-    max-width: 800px;
+    margin-bottom: 24px;
+    max-width: 100%;
 }
 
 .credentials {

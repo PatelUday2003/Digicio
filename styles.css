@@ -1627,8 +1627,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .partner-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-content: center;
+    justify-items: center;
 }
 
 .partner-card {
@@ -1638,6 +1642,8 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     transition: all 0.3s ease;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    width: 100%;
+    max-width: 280px;
 }
 
 .partner-card:hover {

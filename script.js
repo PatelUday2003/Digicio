@@ -1,25 +1,39 @@
 document.addEventListener('DOMContentLoaded', function() {
     const header = document.getElementById('header');
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');        
     const navLinks = document.getElementById('navLinks');
     const statNumbers = document.querySelectorAll('.stat-number');
     let statsAnimated = false;
 
-    // Detect active industry and highlight dropdown item
+    // Detect active industry or service and highlight dropdown item
     const industryMap = {
         'Technology-services': 'Technology',
         'Financial-Services-services': 'Financial Services',
         'Insurance-services': 'Insurance',
-        'Infrastructure-Logistics-services': 'Infrastructure & Logistics',
+        'Infrastructure-Logistics-services': 'Infrastructure & Logistics',       
         'Education-services': 'Education'
     };
-    
+    const serviceMap = {
+        'web-app-development-services': 'Web & App Development',
+        'ux-ui-design-services': 'UX/UI Design',
+        'digital-transformation-services': 'Digital Transformation',
+        'cloud-devops-services': 'Cloud & DevOps'
+    };
+
     const currentPath = window.location.pathname;
-    const dropdownLinks = document.querySelectorAll('.nav-dropdown li a');
-    
+    const dropdownLinks = document.querySelectorAll('.nav-dropdown li a');       
+
     dropdownLinks.forEach(link => {
-        for (const [slug, industryName] of Object.entries(industryMap)) {
+        // Check for industry matches
+        for (const [slug, industryName] of Object.entries(industryMap)) {        
             if (currentPath.includes(slug) && link.textContent.trim() === industryName) {
+                link.classList.add('active');
+                break;
+            }
+        }
+        // Check for service matches
+        for (const [slug, serviceName] of Object.entries(serviceMap)) {        
+            if (currentPath.includes(slug) && link.textContent.trim() === serviceName) {
                 link.classList.add('active');
                 break;
             }
@@ -47,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (!statsAnimated) {
-            const statsSection = document.querySelector('.by-the-numbers');
+            const statsSection = document.querySelector('.by-the-numbers');      
             if (statsSection) {
                 const rect = statsSection.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -101,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 const headerHeight = header.offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;   
 
                 window.scrollTo({
                     top: targetPosition,
@@ -116,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
         question.addEventListener('click', function() {
             const answer = this.nextElementSibling;
             const isOpen = this.classList.contains('active');
-            
+
             faqQuestions.forEach(q => {
                 q.classList.remove('active');
                 const a = q.nextElementSibling;

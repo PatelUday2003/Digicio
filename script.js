@@ -5,6 +5,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const statNumbers = document.querySelectorAll('.stat-number');
     let statsAnimated = false;
 
+    // Detect active industry and highlight dropdown item
+    const industryMap = {
+        'Technology-services': 'Technology',
+        'Financial-Services-services': 'Financial Services',
+        'Insurance-services': 'Insurance',
+        'Infrastructure-Logistics-services': 'Infrastructure & Logistics',
+        'Education-services': 'Education'
+    };
+    
+    const currentPath = window.location.pathname;
+    const dropdownLinks = document.querySelectorAll('.nav-dropdown li a');
+    
+    dropdownLinks.forEach(link => {
+        for (const [slug, industryName] of Object.entries(industryMap)) {
+            if (currentPath.includes(slug) && link.textContent.trim() === industryName) {
+                link.classList.add('active');
+                break;
+            }
+        }
+    });
+
     mobileMenuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('active');
         this.setAttribute('aria-expanded', navLinks.classList.contains('active'));

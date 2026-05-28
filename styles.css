@@ -216,16 +216,31 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-.nav-dropdown li a {
+/* .nav-dropdown li a {
     display: block;
     padding: 12px 20px;
     font-size: 15px;
     color: var(--color-text);
     text-decoration: none;
     transition: background-color 0.3s ease;
+} */
+
+
+/* new */
+
+.nav-dropdown li a {
+    display: block;
+    width: 100%; /* important */
+    padding: 16px 24px;
+    font-size: 15px;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: background-color 0.25s ease,
+                color 0.25s ease;
 }
 
-.nav-dropdown li a:hover {
+
+/* .nav-dropdown li a:hover {
     background-color: var(--color-surface);
     color: var(--color-accent);
 }
@@ -233,7 +248,21 @@ h1, h2, h3, h4, h5, h6 {
 .nav-dropdown li a.active {
     background-color: var(--color-surface);
     color: var(--color-accent);
+} */
+
+/* new  */
+
+.nav-dropdown li a:hover {
+    background-color: #dcefed; /* light mint bg like screenshot */
+    color: #157a6e;
 }
+
+.nav-dropdown li a.active {
+    background-color: #dcefed; /* selected industry bg */
+    color: #157a6e;
+    font-weight: 600;
+}
+
 
 .faq-item {
     background-color: var(--color-white);
